@@ -1,0 +1,73 @@
+﻿<Window x:Class="Synthesizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Synthesizer"
+        mc:Ignorable="d"
+        Title="Synthesizer: Acoustic Grand"
+        x:Name="PianoWindow"
+        Height="250" Width="960"
+        KeyDown="PianoWindow_KeyDown"
+        KeyUp="PianoWindow_KeyUp"
+        MouseUp="PianoWindow_MouseUp">
+
+    <Window.Resources>
+        <Style x:Key="WhiteKeyStyle" TargetType="Button">
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="150"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="0,0,0,10"/>
+        </Style>
+
+        <Style x:Key="BlackKeyStyle" TargetType="Button">
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="Height" Value="90"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+            <Setter Property="Padding" Value="0,0,0,10"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Instruments" Name="InstrumentsMenu"/>
+        </Menu>
+    
+    <Grid HorizontalAlignment="Left" Margin="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Content="Q" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="48"/>
+                <Button Content="W" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="50"/>
+                <Button Content="E" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="52"/>
+                <Button Content="R" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="53"/>
+                <Button Content="T" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="55"/>
+                <Button Content="Y" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="57"/>
+                <Button Content="U" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="59"/>
+                <Button Content="I / Z" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="60"/>
+                <Button Content="X" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="62"/>
+                <Button Content="C" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="64"/>
+                <Button Content="V" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="65"/>
+                <Button Content="B" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="67"/>
+                <Button Content="N" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="69"/>
+                <Button Content="M" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="71"/>
+                <Button Content="," Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="72"/>
+            </StackPanel>
+
+            <Canvas HorizontalAlignment="Left" Width="960" IsHitTestVisible="True">
+                <Button Content="2" Style="{StaticResource BlackKeyStyle}" Canvas.Left="43" Tag="49" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="3" Style="{StaticResource BlackKeyStyle}" Canvas.Left="103" Tag="51" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="5" Style="{StaticResource BlackKeyStyle}" Canvas.Left="223" Tag="54" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="6" Style="{StaticResource BlackKeyStyle}" Canvas.Left="283" Tag="56" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="7" Style="{StaticResource BlackKeyStyle}" Canvas.Left="343" Tag="58" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="S" Style="{StaticResource BlackKeyStyle}" Canvas.Left="463" Tag="61" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="D" Style="{StaticResource BlackKeyStyle}" Canvas.Left="523" Tag="63" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="G" Style="{StaticResource BlackKeyStyle}" Canvas.Left="643" Tag="66" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="H" Style="{StaticResource BlackKeyStyle}" Canvas.Left="703" Tag="68" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+                <Button Content="J" Style="{StaticResource BlackKeyStyle}" Canvas.Left="763" Tag="70" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp"/>
+            </Canvas>
+        </Grid>
+    </DockPanel>
+</Window>
