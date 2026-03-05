@@ -8,12 +8,24 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>app.ico</ApplicationIcon>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Compile Remove="backup 26-03-02\**" />
+    <Compile Remove="backup 3-4-26a\**" />
+    <Compile Remove="backup 3-4-26b\**" />
+    <Compile Remove="backup 3-4-26\**" />
     <EmbeddedResource Remove="backup 26-03-02\**" />
+    <EmbeddedResource Remove="backup 3-4-26a\**" />
+    <EmbeddedResource Remove="backup 3-4-26b\**" />
+    <EmbeddedResource Remove="backup 3-4-26\**" />
     <None Remove="backup 26-03-02\**" />
+    <None Remove="backup 3-4-26a\**" />
+    <None Remove="backup 3-4-26b\**" />
+    <None Remove="backup 3-4-26\**" />
     <Page Remove="backup 26-03-02\**" />
+    <Page Remove="backup 3-4-26a\**" />
+    <Page Remove="backup 3-4-26b\**" />
+    <Page Remove="backup 3-4-26\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -35,25 +35,48 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Instruments" Name="InstrumentsMenu"/>
+            <MenuItem Header="_Lower" Click="Lower_Click"/>
+            <MenuItem Header="_Higher" Click="Higher_Click"/>
         </Menu>
     
     <Grid HorizontalAlignment="Left" Margin="20">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <Button Content="Q" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="48"/>
+
+                <Button Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="48">
+                    <StackPanel VerticalAlignment="Bottom">
+                        <TextBlock Text="C3" Name="LeftC" HorizontalAlignment="Center" Foreground="Red" FontSize="20"/>
+                        <TextBlock Text="Q" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
                 <Button Content="W" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="50"/>
                 <Button Content="E" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="52"/>
                 <Button Content="R" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="53"/>
                 <Button Content="T" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="55"/>
                 <Button Content="Y" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="57"/>
                 <Button Content="U" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="59"/>
-                <Button Content="I / Z" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="60"/>
+
+                <Button Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="60">
+                    <StackPanel VerticalAlignment="Bottom">
+                        <TextBlock Text="C4" Name="MiddleC" HorizontalAlignment="Center" Foreground="Red" FontSize="20"/>
+                        <TextBlock Text="I / Z" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
                 <Button Content="X" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="62"/>
                 <Button Content="C" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="64"/>
                 <Button Content="V" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="65"/>
                 <Button Content="B" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="67"/>
                 <Button Content="N" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="69"/>
                 <Button Content="M" Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="71"/>
-                <Button Content="," Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="72"/>
+
+                <Button Style="{StaticResource WhiteKeyStyle}" PreviewMouseDown="NoteDown" PreviewMouseUp="NoteUp" Tag="72">
+                    <StackPanel VerticalAlignment="Bottom">
+                        <TextBlock Text="C5" Name="RightC" HorizontalAlignment="Center" Foreground="Red" FontSize="20"/>
+                        <TextBlock Text="," HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
             </StackPanel>
 
             <Canvas HorizontalAlignment="Left" Width="960" IsHitTestVisible="True">

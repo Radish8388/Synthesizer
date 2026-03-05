@@ -24,8 +24,9 @@ namespace Synthesizer
     public partial class MainWindow : Window
     {
         private MidiKeyboard _myKeyboard = new MidiKeyboard();
-        private bool[] IsDown = new bool[73];
+        private bool[] IsDown = new bool[128];
         private int lastNote = 0;
+        private int octave = 0;
 
         public MainWindow()
         {
@@ -255,6 +256,7 @@ namespace Synthesizer
                 case Key.M: note = 71; break;
                 case Key.OemComma: note = 72; break;
             }
+            if (note > 0) note += octave * 12;
 
             if (!IsDown[note] && note > 0)
             {
@@ -299,6 +301,7 @@ namespace Synthesizer
 
             if (note > 0)
             {
+                note += octave * 12;
                 await _myKeyboard.NoteUp(note);
                 IsDown[note] = false;
                 Debug.WriteLine($"note up = {note}");
@@ -311,6 +314,7 @@ namespace Synthesizer
             {
                 if (int.TryParse(btn.Tag.ToString(), out int note) && !IsDown[note])
                 {
+                    note += octave * 12;
                     await _myKeyboard.NoteDown(note);
                     lastNote = note;
                     Debug.WriteLine($"Button Mouse Down called. Note={lastNote}");
@@ -342,6 +346,22 @@ namespace Synthesizer
             //lastNote = 0;
             IsDown[lastNote] = false;
             Mouse.Capture(null);  // releases capture
+        }
+
+        private void Lower_Click(object sender, RoutedEventArgs e)
+        {
+            if (octave > -3) octave--;
+            LeftC.Text = $"C{octave + 3}";
+            MiddleC.Text = $"C{octave + 4}";
+            RightC.Text = $"C{octave + 5}";
+        }
+
+        private void Higher_Click(object sender, RoutedEventArgs e)
+        {
+            if (octave < 4) octave++;
+            LeftC.Text = $"C{octave + 3}";
+            MiddleC.Text = $"C{octave + 4}";
+            RightC.Text = $"C{octave + 5}";
         }
     }
 }
