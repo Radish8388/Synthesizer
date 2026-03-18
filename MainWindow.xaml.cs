@@ -239,7 +239,7 @@ namespace Synthesizer
                 case Key.T: note = 55; break;
                 case Key.D6: note = 56; break;
                 case Key.Y: note = 57; break;
-                case Key.D7: note = 59; break;
+                case Key.D7: note = 58; break;
                 case Key.U: note = 59; break;
                 case Key.I: note = 60; break;
                 case Key.Z: note = 60; break;
@@ -281,7 +281,7 @@ namespace Synthesizer
                 case Key.T: note = 55; break;
                 case Key.D6: note = 56; break;
                 case Key.Y: note = 57; break;
-                case Key.D7: note = 59; break;
+                case Key.D7: note = 58; break;
                 case Key.U: note = 59; break;
                 case Key.I: note = 60; break;
                 case Key.Z: note = 60; break;
